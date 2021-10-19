@@ -1,6 +1,6 @@
-# Ego's Arch Post Install Script
+## Ego's Arch Post Install Script
 
-## Installation
+### Installation
 
 Install git
 
