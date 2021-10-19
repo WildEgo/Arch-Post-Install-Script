@@ -15,7 +15,7 @@ yay --needed --noconfirm -S nvidia xorg-server egl-wayland wget git lightdm ligh
 alias ls="exa"
 
 # Move config files to correct directory
-mv -f -v ./config/* ~/.config
+cp -fva ./config/. ~/.config/
 
 # Change LightDM greeter
 sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-gtk-greeter/g'
