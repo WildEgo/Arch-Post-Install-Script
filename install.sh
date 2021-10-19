@@ -39,5 +39,10 @@ nvm install node
 nvm use node
 npm install --global yarn
 
+# Install Code extensions
+for extension in bmalehorn.vscode-fish bmewburn.vscode-intelephense-client bradlc.vscode-tailwindcss dbaeumer.vscode-eslint DominicVonk.parameter-hints golang.go GraphQL.vscode-graphql Gruntfuggly.todo-tree higoka.php-cs-fixer IBM.output-colorizer mechatroner.rainbow-csv mikestead.dotenv ms-azuretools.vscode-docker neilbrayfield.php-docblocker octref.vetur oderwat.indent-rainbow Prisma.prisma tamasfe.even-better-toml wix.vscode-import-cost yzhang.markdown-all-in-one; do
+    code --install-extension $extension
+done
+
 # Reboot
 # reboot
