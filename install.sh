@@ -1,6 +1,6 @@
 # Packages
 sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10/g' /etc/pacman.conf
-sudo git clone https://aur.archlinux.org/yay-git.git
+git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 sudo makepkg -si
 cd ..
