@@ -40,4 +40,4 @@ nvm use node
 npm install --global yarn
 
 # Reboot
-reboot
+# reboot
