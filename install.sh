@@ -25,8 +25,8 @@ mv -v ./config/* ~/.config
 # TODO Configurate everything
 sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-gtk-greeter/g'
 mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
-systemctl enable --now mariadb.service
-systemctl enable lightdm
+sudo systemctl enable --now mariadb.service
+sudo systemctl enable lightdm
 
 # Reboot
 reboot
