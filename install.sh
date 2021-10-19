@@ -2,7 +2,7 @@
 sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10/g' /etc/pacman.conf
 
 # Install base packages
-sudo pacman --needed --noconfirm -S base-devel
+sudo pacman --needed --noconfirm -Syuu base-devel
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
 yes | makepkg -si
