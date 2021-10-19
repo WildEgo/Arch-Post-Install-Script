@@ -3,7 +3,7 @@ sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10/g' /etc/pacman.conf
 sudo pacman --noconfirm -S base-devel
 git clone https://aur.archlinux.org/yay-git.git
 cd yay-git
-sudo makepkg -si
+makepkg -si
 cd ..
 sudo yay -S --noconfirm nvidia xorg-server egl-wayland wget git lightdm lightdm-gtk-greeter kde-desktop kscreen plasma-wayland-session neofetch exa alsa-utils kitty-git fish nginx-mainline starship-git nvm php-fpm python mariadb docker code filezilla android-studio google-chrome firefox opera lutris legendary steam discord vlc spotify ufw obs-studio-git virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin
 
