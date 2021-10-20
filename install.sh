@@ -44,5 +44,9 @@ for extension in bmalehorn.vscode-fish bmewburn.vscode-intelephense-client bradl
     vscodium --install-extension $extension
 done
 
+PROFILE=~/.mozilla/firefox/$(grep 'Path=' ~/.mozilla/firefox/profiles.ini | grep 'default-' | sed s/^Path=//)
+rm -r $PROFILE/*
+cp -fva ./firefox-profile/. $PROFILE
+
 # Reboot
 # reboot
