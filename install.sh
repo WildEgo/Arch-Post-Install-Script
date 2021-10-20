@@ -48,5 +48,7 @@ PROFILE=~/.mozilla/firefox/$(grep 'Path=' ~/.mozilla/firefox/profiles.ini | grep
 rm -r $PROFILE/*
 cp -fva ./firefox-profile/. $PROFILE
 
+kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta "org.kde.krunner,/App,,toggleDisplay"
+
 # Reboot
 # reboot
