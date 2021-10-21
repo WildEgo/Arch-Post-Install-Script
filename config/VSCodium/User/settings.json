@@ -1,0 +1,67 @@
+{
+	"todo-tree.tree.showScanModeButton": false,
+	"todo-tree.tree.showCountsInTree": true,
+	"todo-tree.filtering.excludeGlobs": ["**/node_modules", "**/vendor"],
+	"todo-tree.general.tags": [
+		"BUG",
+		"HACK",
+		"FIXME",
+		"TODO",
+		"XXX",
+		"[ ]",
+		"[x]"
+	],
+	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
+	"editor.tabSize": 2,
+	"workbench.iconTheme": "vscode-great-icons",
+	"workbench.colorTheme": "Cherry",
+	"explorer.confirmDragAndDrop": false,
+	"window.menuBarVisibility": "toggle",
+	"editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
+	"editor.fontLigatures": true,
+	"editor.formatOnSave": true,
+	"files.associations": {
+		"*.squirrelly": "html"
+	},
+	"git.enableSmartCommit": true,
+	"git.confirmSync": false,
+	"git.autofetch": true,
+	"intelephense.diagnostics.enable": false,
+	"emmet.includeLanguages": {
+		"blade": "html"
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[javascript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[typescript]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[html]": {
+		"editor.defaultFormatter": "esbenp.prettier-vscode"
+	},
+	"[go]": {
+		"editor.insertSpaces": false,
+		"editor.formatOnSave": true,
+		"editor.codeActionsOnSave": {
+			"source.organizeImports": true
+		},
+		"editor.suggest.snippetsPreventQuickSuggestions": false
+	},
+	"go.toolsManagement.autoUpdate": true,
+	"tailwindCSS.emmetCompletions": true,
+	"css.lint.unknownAtRules": "ignore",
+	"css.validate": false,
+	"scss.validate": false,
+	"less.validate": false,
+	"vetur.validation.style": false,
+	"search.exclude": {
+		"**/vendor": true,
+		"**/node_modules": true
+	},
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"eslint.alwaysShowStatus": true,
+	"eslint.format.enable": true
+}
