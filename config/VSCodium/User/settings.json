@@ -13,13 +13,15 @@
 	],
 	"todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
 	"editor.tabSize": 2,
-	"workbench.iconTheme": "vscode-great-icons",
+	"workbench.productIconTheme": "fluent-icons",
+	"workbench.iconTheme": "vscode-icons",
 	"workbench.colorTheme": "Cherry",
 	"explorer.confirmDragAndDrop": false,
 	"window.menuBarVisibility": "toggle",
 	"editor.fontFamily": "'Fira Code', Consolas, 'Courier New', monospace",
 	"editor.fontLigatures": true,
 	"editor.formatOnSave": true,
+	"editor.fontSize": 14,
 	"files.associations": {
 		"*.squirrelly": "html"
 	},
