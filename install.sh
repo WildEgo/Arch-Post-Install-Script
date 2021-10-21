@@ -17,6 +17,7 @@ cp -fva ./glassy-chrome-plasma-theme/theme/. ~/.local/share/plasma/desktoptheme/
 
 # Install Cherry Theme
 git clone https://github.com/nullxception/cherry-kde-theme.git
+sudo chmod +x ./cherry-kde-theme/install.sh
 ./cherry-kde-theme/install.sh
 
 # Alias LS
