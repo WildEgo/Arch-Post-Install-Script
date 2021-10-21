@@ -20,6 +20,11 @@ git clone https://github.com/nullxception/cherry-kde-theme.git
 sudo chmod +x ./cherry-kde-theme/install.sh
 ./cherry-kde-theme/install.sh
 
+# Install Fluent Icons
+git clone https://github.com/vinceliuice/Fluent-icon-theme.git
+sudo chmod +x ./Fluent-icon-theme/install.sh
+./Fluent-icon-theme/install.sh -a
+
 # Move wallpaper
 mkdir /usr/share/wallpapers/
 cp -fva ./wallpapers/. /usr/share/wallpapers/
