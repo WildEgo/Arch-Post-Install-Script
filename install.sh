@@ -1,3 +1,5 @@
+# TODO Replace lightdm-gtk-greeter with something cleaner.
+
 # Enable parallel downloads
 sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10/g' /etc/pacman.conf
 
@@ -30,6 +32,10 @@ sudo chmod +x ./cherry-kde-theme/install.sh
 git clone https://github.com/vinceliuice/Fluent-icon-theme.git
 sudo chmod +x ./Fluent-icon-theme/install.sh
 ./Fluent-icon-theme/install.sh -a
+
+# Install Sticky Window Snapping
+git clone https://github.com/Flupp/sticky-window-snapping.git
+sudo cp -fva ./sticky-window-snapping/package/. $HOME/.local/share/kwin/scripts/sticky-window-snapping/
 
 # Move wallpaper
 mkdir /usr/share/wallpapers/
@@ -69,9 +75,8 @@ for extension in bmalehorn.vscode-fish bmewburn.vscode-intelephense-client bradl
     vscodium --install-extension $extension
 done
 
-PROFILE=$HOME/.mozilla/firefox/$(grep 'Path=' $HOME/.mozilla/firefox/profiles.ini | grep 'default-' | sed s/^Path=//)
-rm -r $PROFILE/*
-cp -fva ./firefox-profile/. $PROFILE
+mkdir $HOME/.mozilla/ $HOME/.mozilla/firefox/ $HOME/.mozilla/firefox/
+cp -fva ./firefox/. $HOME/.mozilla/firefox/
 
 # Reboot
 # reboot
