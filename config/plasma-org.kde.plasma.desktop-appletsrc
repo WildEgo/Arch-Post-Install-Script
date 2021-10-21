@@ -27,7 +27,7 @@ ToolBoxButtonState=topcenter
 ToolBoxButtonX=567
 
 [Containments][1][Wallpaper][org.kde.image][General]
-Image=file:///home/ego/.local/share/wallpapers/ego/contents/images/1920x1080.jpg
+Image=file:///usr/share/wallpapers/ego/contents/images/1920x1080.jpg
 SlidePaths=/home/ego/.local/share/wallpapers,/usr/share/wallpapers
 
 [Containments][2]
