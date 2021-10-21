@@ -27,7 +27,7 @@ sudo chmod +x ./Fluent-icon-theme/install.sh
 
 # Move wallpaper
 mkdir /usr/share/wallpapers/
-cp -fva ./wallpapers/. /usr/share/wallpapers/
+sudo cp -fva ./wallpapers/. /usr/share/wallpapers/
 
 # Alias LS
 alias ls="exa"
