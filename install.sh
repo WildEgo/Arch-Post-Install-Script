@@ -14,7 +14,7 @@ yay --needed --noconfirm -S nvidia xorg-server egl-wayland wget git lightdm ligh
 # Install Digital Clock Lite
 git clone https://github.com/Intika-KDE-Plasmoids/plasmoid-digital-clock-lite.git
 sudo chmod +x ./plasmoid-digital-clock-lite/archive/install.sh
-./plasmoid-digital-clock-lite/archive/install.sh
+sudo ./plasmoid-digital-clock-lite/archive/install.sh
 
 # Install Glassy Chrome Plasma Theme
 git clone https://gitlab.com/demsking/glassy-chrome-plasma-theme.git
