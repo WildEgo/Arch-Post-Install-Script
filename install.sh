@@ -20,6 +20,10 @@ git clone https://github.com/nullxception/cherry-kde-theme.git
 sudo chmod +x ./cherry-kde-theme/install.sh
 ./cherry-kde-theme/install.sh
 
+# Move wallpaper
+mkdir /usr/share/wallpapers/
+cp -fva ./wallpapers/. /usr/share/wallpapers/
+
 # Alias LS
 alias ls="exa"
 
