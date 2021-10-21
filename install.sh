@@ -11,6 +11,14 @@ cd ..
 # Use YAY to install all necessary packages
 yay --needed --noconfirm -S nvidia xorg-server egl-wayland wget git lightdm lightdm-gtk-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session dolphin neofetch exa alsa-utils kitty-git fish nginx-mainline starship-git php-fpm composer python mariadb docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go
 
+# Install Glassy Chrome Plasma Theme
+git clone https://gitlab.com/demsking/glassy-chrome-plasma-theme.git
+cp -fva ./glassy-chrome-plasma-theme/theme/. ~/.local/share/plasma/desktoptheme/Glassy-Chrome/
+
+# Install Cherry Theme
+git clone https://github.com/nullxception/cherry-kde-theme.git
+./cherry-kde-theme/install.sh
+
 # Alias LS
 alias ls="exa"
 
@@ -48,8 +56,6 @@ done
 PROFILE=~/.mozilla/firefox/$(grep 'Path=' ~/.mozilla/firefox/profiles.ini | grep 'default-' | sed s/^Path=//)
 rm -r $PROFILE/*
 cp -fva ./firefox-profile/. $PROFILE
-
-kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta "org.kde.krunner,/App,,toggleDisplay"
 
 # Reboot
 # reboot
