@@ -18,7 +18,7 @@ sudo ./plasmoid-digital-clock-lite/archive/install.sh
 
 # Install Glassy Chrome Plasma Theme
 git clone https://gitlab.com/demsking/glassy-chrome-plasma-theme.git
-cp -fva ./glassy-chrome-plasma-theme/theme/. ~/.local/share/plasma/desktoptheme/Glassy-Chrome/
+sudo cp -fva ./glassy-chrome-plasma-theme/theme/. $HOME/.local/share/plasma/desktoptheme/Glassy-Chrome/
 
 # Install Cherry Theme
 git clone https://github.com/nullxception/cherry-kde-theme.git
@@ -38,7 +38,7 @@ sudo cp -fva ./wallpapers/. /usr/share/wallpapers/
 alias ls="exa"
 
 # Move config files to correct directory
-cp -fva ./config/. ~/.config/
+cp -fva ./config/. $HOME/.config/
 
 # Change LightDM greeter
 sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-gtk-greeter/g'
@@ -68,7 +68,7 @@ for extension in bmalehorn.vscode-fish bmewburn.vscode-intelephense-client bradl
     vscodium --install-extension $extension
 done
 
-PROFILE=~/.mozilla/firefox/$(grep 'Path=' ~/.mozilla/firefox/profiles.ini | grep 'default-' | sed s/^Path=//)
+PROFILE=$HOME/.mozilla/firefox/$(grep 'Path=' $HOME/.mozilla/firefox/profiles.ini | grep 'default-' | sed s/^Path=//)
 rm -r $PROFILE/*
 cp -fva ./firefox-profile/. $PROFILE
 
