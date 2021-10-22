@@ -65,12 +65,6 @@ make install
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
 wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902cd7576b67264ad91c8a2700e2/web/installer -O - -q | php -- --quiet
 
-# Install Node & Yarn
-nvm install node
-nvm use node
-npm install --global yarn
-yarn global add prettier eslint expo-cli
-
 # Install Code extensions
 for extension in bmalehorn.vscode-fish bmewburn.vscode-intelephense-client bradlc.vscode-tailwindcss dbaeumer.vscode-eslint DominicVonk.parameter-hints golang.go GraphQL.vscode-graphql Gruntfuggly.todo-tree higoka.php-cs-fixer IBM.output-colorizer mechatroner.rainbow-csv mikestead.dotenv ms-azuretools.vscode-docker neilbrayfield.php-docblocker octref.vetur oderwat.indent-rainbow Prisma.prisma tamasfe.even-better-toml wix.vscode-import-cost yzhang.markdown-all-in-one nullxception.cherry-theme idleberg.icon-fonts idleberg.icon-fonts miguelsolorio.fluent-icons vscode-icons-team.vscode-icons; do
     vscodium --install-extension $extension
@@ -78,6 +72,10 @@ done
 
 mkdir $HOME/.mozilla/ $HOME/.mozilla/firefox/ $HOME/.mozilla/firefox/
 cp -fva ./firefox/ $HOME/.mozilla/
+
+# Install Node & Yarn
+sudo chmod +x ./node.sh
+./node.sh
 
 # Reboot
 # reboot
