@@ -21,6 +21,7 @@ sudo cp -fva ./plasmoid-digital-clock-lite/package/. /usr/share/plasma/plasmoids
 
 # Install Glassy Chrome Plasma Theme
 git clone https://gitlab.com/demsking/glassy-chrome-plasma-theme.git
+mkdir $HOME/.local/share/plasma/desktoptheme/ $HOME/.local/share/plasma/desktoptheme/Glassy-Chrome/
 sudo cp -fva ./glassy-chrome-plasma-theme/theme/. $HOME/.local/share/plasma/desktoptheme/Glassy-Chrome/
 
 # Install Cherry Theme

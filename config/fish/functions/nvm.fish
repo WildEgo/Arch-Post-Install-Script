@@ -1,31 +1,24 @@
-# ~/.config/fish/functions/nvm.fish
 function nvm
-  bass source ~/.nvm/nvm.sh --no-use ';' nvm $argv
-end
+  if not type -q bass
+    echo 'Bass is not installed please install it running fisher edc/bass'
+    return
+  end
+  set -q NVM_DIR; or set -gx NVM_DIR ~/.nvm
+  set -q nvm_prefix; or set -gx nvm_prefix $NVM_DIR
+  
+  bass source $nvm_prefix/nvm.sh --no-use ';' nvm $argv
 
-# ~/.config/fish/functions/nvm_find_nvmrc.fish
-function nvm_find_nvmrc
-  bass source ~/.nvm/nvm.sh --no-use ';' nvm_find_nvmrc
-end
+  set bstatus $status
 
-# ~/.config/fish/functions/load_nvm.fish
-function load_nvm --on-variable="PWD"
-  set -l default_node_version (nvm version default)
-  set -l node_version (nvm version)
-  set -l nvmrc_path (nvm_find_nvmrc)
-  if test -n "$nvmrc_path"
-    set -l nvmrc_node_version (nvm version (cat $nvmrc_path))
-    if test "$nvmrc_node_version" = "N/A"
-      nvm install (cat $nvmrc_path)
-    else if test nvmrc_node_version != node_version
-      nvm use $nvmrc_node_version
-    end
-  else if test "$node_version" != "$default_node_version"
-    echo "Reverting to default Node version"
-    nvm use default
+  if test $bstatus -gt 0
+    return $bstatus
+  end
+
+  if test (count $argv) -lt 1
+    return 0
+  end
+
+  if test $argv[1] = "use"; or test $argv[1] = "install"
+    set -g NVM_HAS_RUN 1
   end
 end
-
-# ~/.config/fish/config.fish
-# You must call it on initialization or listening to directory switching won't work
-load_nvm
