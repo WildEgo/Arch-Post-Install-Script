@@ -36,7 +36,8 @@ sudo chmod +x ./Fluent-icon-theme/install.sh
 
 # Install Sticky Window Snapping
 git clone https://github.com/Flupp/sticky-window-snapping.git
-sudo cp -fva ./sticky-window-snapping/package/. $HOME/.local/share/kwin/scripts/sticky-window-snapping/
+mkdir $HOME/.local/share/kwin/ $HOME/.local/share/kwin/scripts/
+cp -fva ./sticky-window-snapping/package/. $HOME/.local/share/kwin/scripts/sticky-window-snapping/
 
 # Move wallpaper
 mkdir /usr/share/wallpapers/
