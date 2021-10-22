@@ -6,12 +6,12 @@ sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10/g' /etc/pacman.conf
 # Install base packages
 sudo pacman --needed --noconfirm -Syuu base-devel
 git clone https://aur.archlinux.org/yay-git.git
-cd yay-git
+cd ./yay-git
 yes | makepkg -si
 cd ..
 
 # Use YAY to install all necessary packages
-yay --needed --noconfirm -S nvidia xorg-server egl-wayland wget git lightdm lightdm-gtk-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session dolphin neofetch exa alsa-utils kitty-git fish nginx-mainline starship-git php-fpm composer python mariadb docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go imagemagick
+yay --needed --noconfirm -S nvidia xorg-server egl-wayland wget git lightdm lightdm-gtk-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session kde-gtk-config dolphin neofetch exa alsa-utils kitty-git fish nginx-mainline starship-git php-fpm composer python mariadb docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go imagemagick sassc meson
 
 # Install Digital Clock Lite
 git clone https://github.com/Intika-KDE-Plasmoids/plasmoid-digital-clock-lite.git
@@ -23,6 +23,13 @@ sudo cp -fva ./plasmoid-digital-clock-lite/package/. /usr/share/plasma/plasmoids
 git clone https://github.com/nullxception/cherry-kde-theme.git
 sudo chmod +x ./cherry-kde-theme/install.sh
 ./cherry-kde-theme/install.sh
+
+# Install Cherrita GTK Theme
+git clone https://github.com/nullxception/cherrita-gtk-theme.git
+cd ./cherrita-gtk-theme
+meson build --prefix=/usr
+ninja -C build install
+cd ..
 
 # Install Glassy Chrome Plasma Theme
 git clone https://gitlab.com/demsking/glassy-chrome-plasma-theme.git
