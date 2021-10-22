@@ -81,9 +81,5 @@ done
 mkdir $HOME/.mozilla/ $HOME/.mozilla/firefox/ $HOME/.mozilla/firefox/
 cp -fva ./firefox/ $HOME/.mozilla/
 
-# Install Node & Yarn
-sudo chmod +x ./node.sh
-./node.sh
-
 # Reboot
 # reboot
