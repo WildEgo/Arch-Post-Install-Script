@@ -77,7 +77,7 @@ for extension in bmalehorn.vscode-fish bmewburn.vscode-intelephense-client bradl
 done
 
 mkdir $HOME/.mozilla/ $HOME/.mozilla/firefox/ $HOME/.mozilla/firefox/
-cp -fva ./firefox/. $HOME/.mozilla/firefox/
+cp -fva ./firefox/ $HOME/.mozilla/
 
 # Reboot
 # reboot
