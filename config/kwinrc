@@ -9,6 +9,9 @@ Rows=1
 [ModifierOnlyShortcuts]
 Meta=org.kde.krunner,/App,,toggleDisplay
 
+[Plugins]
+sticky-window-snappingEnabled=true
+
 [org.kde.kdecoration2]
 ButtonsOnLeft=
 ButtonsOnRight=IAX
