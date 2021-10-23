@@ -38,7 +38,7 @@ sudo cp -fva ./glassy-chrome-plasma-theme/theme/. $HOME/.local/share/plasma/desk
 # Install Fluent Icons
 git clone https://github.com/vinceliuice/Fluent-icon-theme.git
 sudo chmod +x ./Fluent-icon-theme/install.sh
-./Fluent-icon-theme/install.sh -a
+./Fluent-icon-theme/install.sh purple
 
 # Install Sticky Window Snapping
 git clone https://github.com/Flupp/sticky-window-snapping.git
