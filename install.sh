@@ -27,8 +27,8 @@ sudo chmod +x ./cherry-kde-theme/install.sh
 # Install Cherrita GTK Theme
 git clone https://github.com/nullxception/cherrita-gtk-theme.git
 cd ./cherrita-gtk-theme
-meson build --prefix=/usr
-ninja -C build install
+sudo meson build --prefix=/usr
+sudo ninja -C build install
 cd ..
 
 # Install Glassy Chrome Plasma Theme
