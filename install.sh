@@ -3,6 +3,10 @@
 # Enable parallel downloads
 sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10/g' /etc/pacman.conf
 
+# Change GRUB Timeout to 0
+sudo sed -i 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/g' /etc/default/grub
+sudo update-grub
+
 # Install base packages
 sudo pacman --needed --noconfirm -Syuu base-devel
 git clone https://aur.archlinux.org/yay-git.git
