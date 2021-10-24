@@ -1,5 +1,3 @@
-# TODO Replace lightdm-gtk-greeter with something cleaner.
-
 # Enable parallel downloads
 sudo sed -i 's/#ParallelDownloads = 5/ParallelDownloads = 10/g' /etc/pacman.conf
 
@@ -15,7 +13,7 @@ yes | makepkg -si
 cd ..
 
 # Use YAY to install all necessary packages
-yay --needed --noconfirm -S nvidia xorg-server egl-wayland wget git lightdm lightdm-gtk-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session kde-gtk-config dolphin neofetch exa alsa-utils kitty fish nginx-mainline starship php-fpm composer python mariadb docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go imagemagick sassc meson lrzip lzop p7zip unarchiver ark
+yay --needed --noconfirm -S nvidia xorg-server egl-wayland wget git lightdm lightdm-webkit2-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session kde-gtk-config dolphin neofetch exa alsa-utils kitty fish nginx-mainline starship php-fpm composer python mariadb docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go imagemagick sassc meson lrzip lzop p7zip unarchiver ark
 
 # Install Digital Clock Lite
 git clone https://github.com/Intika-KDE-Plasmoids/plasmoid-digital-clock-lite.git
@@ -60,7 +58,7 @@ alias ls="exa"
 cp -fva ./config/. $HOME/.config/
 
 # Change LightDM greeter
-sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-gtk-greeter/g'
+sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 
 # Prepare MySQL
 mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
