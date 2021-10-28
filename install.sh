@@ -15,6 +15,9 @@ cd ..
 # Use YAY to install all necessary packages
 yay --needed --noconfirm -S nvidia xorg-server egl-wayland wget git lightdm lightdm-webkit2-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session kde-gtk-config dolphin neofetch exa alsa-utils kitty fish nginx-mainline starship php-fpm composer python mariadb docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox-host-dkms virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go imagemagick sassc meson lrzip lzop p7zip unarchiver ark qemu
 
+# Set Fish as default Shell
+chsh -s `which fish`
+
 # Install Digital Clock Lite
 git clone https://github.com/Intika-KDE-Plasmoids/plasmoid-digital-clock-lite.git
 sudo chmod +x ./plasmoid-digital-clock-lite/archive/install.sh
