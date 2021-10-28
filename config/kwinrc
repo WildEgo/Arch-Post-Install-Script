@@ -12,6 +12,9 @@ Meta=org.kde.krunner,/App,,toggleDisplay
 [Plugins]
 sticky-window-snappingEnabled=true
 
+[TabBox]
+ShowTabBox=false
+
 [org.kde.kdecoration2]
 ButtonsOnLeft=
 ButtonsOnRight=IAX
