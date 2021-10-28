@@ -54,6 +54,20 @@ cp -fva ./sticky-window-snapping/package/. $HOME/.local/share/kwin/scripts/stick
 mkdir /usr/share/wallpapers/
 sudo cp -fva ./wallpapers/. /usr/share/wallpapers/
 
+# Install KRunner Spotify Service
+git clone https://github.com/MartijnVogelaar/krunner-spotify
+cd ./krunner-spotify
+sudo chmod +x install.sh
+./install.sh
+cd ..
+
+# Install KRunner SSH Service
+git clone https://gitlab.com/Programie/krunner-ssh.git
+cd ./krunner-ssh
+sudo chmod +x install.sh
+./install.sh
+cd ..
+
 # Alias LS
 alias ls="exa"
 
