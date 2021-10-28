@@ -1,2 +1,9 @@
 [$Version]
 update_info=kscreenlocker.upd:0.1-autolock
+
+[Daemon]
+Autlock=false
+
+[Greeter][Wallpaper][org.kde.images][General]
+Image=/usr/share/wallpapers/ego/
+SlidePaths=/usr/share/wallpapers/

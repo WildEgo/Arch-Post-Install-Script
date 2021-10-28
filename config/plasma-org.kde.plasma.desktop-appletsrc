@@ -28,7 +28,7 @@ ToolBoxButtonX=567
 
 [Containments][1][Wallpaper][org.kde.image][General]
 Image=file:///usr/share/wallpapers/ego/contents/images/1920x1080.jpg
-SlidePaths=/home/ego/.local/share/wallpapers,/usr/share/wallpapers
+SlidePaths=/usr/share/wallpapers
 
 [Containments][2]
 activityId=
