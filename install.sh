@@ -15,6 +15,11 @@ cd ..
 # Use YAY to install all necessary packages
 yay --needed --noconfirm -S nvidia xdg-user-dirs xorg-server xorg-apps xorg-xinit egl-wayland wget git lightdm lightdm-webkit2-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session kde-gtk-config dolphin neofetch exa kitty fish nginx-mainline starship php-fpm composer python mariadb docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox-host-dkms virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go imagemagick sassc meson lrzip lzop p7zip unarchiver ark qemu kwallet kwallet-pam kwalletmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol plasma-pa xdg-desktop-portal xdg-desktop-portal-kde youtube-dl
 
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install cargo-watch
+cargo install diesel_cli --no-default-features --features="mysql postgresql"
+
 # Set Fish as default Shell
 chsh -s `which fish`
 
@@ -78,7 +83,8 @@ cp -fva ./config/. $HOME/.config/
 sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 
 # Prepare MySQL
-mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
+sudo chattr +C /var/lib/mysql/
+sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
 # Enable services
 sudo systemctl enable --now mariadb.service
@@ -93,7 +99,7 @@ wget https://raw.githubusercontent.com/composer/getcomposer.org/76a7060ccb93902c
 cd ..
 
 # Install Code extensions
-for extension in bmalehorn.vscode-fish bmewburn.vscode-intelephense-client bradlc.vscode-tailwindcss dbaeumer.vscode-eslint DominicVonk.parameter-hints golang.go GraphQL.vscode-graphql Gruntfuggly.todo-tree higoka.php-cs-fixer IBM.output-colorizer mechatroner.rainbow-csv mikestead.dotenv ms-azuretools.vscode-docker neilbrayfield.php-docblocker octref.vetur oderwat.indent-rainbow Prisma.prisma tamasfe.even-better-toml wix.vscode-import-cost yzhang.markdown-all-in-one nullxception.cherry-theme idleberg.icon-fonts idleberg.icon-fonts miguelsolorio.fluent-icons vscode-icons-team.vscode-icons; do
+for extension in bmalehorn.vscode-fish bmewburn.vscode-intelephense-client bradlc.vscode-tailwindcss dbaeumer.vscode-eslint DominicVonk.parameter-hints golang.go GraphQL.vscode-graphql Gruntfuggly.todo-tree higoka.php-cs-fixer IBM.output-colorizer mechatroner.rainbow-csv mikestead.dotenv ms-azuretools.vscode-docker neilbrayfield.php-docblocker octref.vetur oderwat.indent-rainbow Prisma.prisma tamasfe.even-better-toml wix.vscode-import-cost yzhang.markdown-all-in-one nullxception.cherry-theme idleberg.icon-fonts idleberg.icon-fonts miguelsolorio.fluent-icons vscode-icons-team.vscode-icons rust-lang.rust; do
     vscodium --install-extension $extension
 done
 

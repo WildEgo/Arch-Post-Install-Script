@@ -52,6 +52,9 @@
 		},
 		"editor.suggest.snippetsPreventQuickSuggestions": false
 	},
+	"[rust]": {
+		"editor.defaultFormatter": "rust-lang.rust"
+	},
 	"go.toolsManagement.autoUpdate": true,
 	"tailwindCSS.emmetCompletions": true,
 	"css.lint.unknownAtRules": "ignore",
