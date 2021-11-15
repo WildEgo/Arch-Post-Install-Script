@@ -13,12 +13,7 @@ yes | makepkg -si
 cd ..
 
 # Use YAY to install all necessary packages
-yay --needed --noconfirm -S nvidia xdg-user-dirs xorg-server xorg-apps xorg-xinit egl-wayland wget git lightdm lightdm-webkit2-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session kde-gtk-config dolphin neofetch exa kitty fish nginx-mainline starship php-fpm composer python mariadb docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox-host-dkms virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go imagemagick sassc meson lrzip lzop p7zip unarchiver ark qemu kwallet kwallet-pam kwalletmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol plasma-pa xdg-desktop-portal xdg-desktop-portal-kde youtube-dl
-
-# Install Rust
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install cargo-watch
-cargo install diesel_cli --no-default-features --features="mysql postgresql"
+yay --needed --noconfirm -S nvidia xdg-user-dirs xorg-server xorg-apps xorg-xinit egl-wayland wget git lightdm lightdm-webkit2-greeter adobe-source-code-pro-fonts ttf-roboto ttf-oswald ttf-fira-sans ttf-fira-mono noto-fonts-extra ttf-fira-code plasma-desktop kscreen plasma-wayland-session kde-gtk-config dolphin neofetch exa kitty fish nginx-mainline starship php-fpm composer python mariadb postgresql docker vscodium-bin filezilla android-studio google-chrome firefox opera lutris legendary steam vlc spotify ufw obs-studio virtualbox-host-dkms virtualbox ffmpeg ktorrent timeshift-bin kdeconnect htop beekeeper-studio-bin go imagemagick sassc meson lrzip lzop p7zip unarchiver ark qemu kwallet kwallet-pam kwalletmanager pipewire pipewire-alsa pipewire-pulse pipewire-jack pavucontrol plasma-pa xdg-desktop-portal xdg-desktop-portal-kde youtube-dl
 
 # Set Fish as default Shell
 chsh -s `which fish`
@@ -86,8 +81,18 @@ sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit
 sudo chattr +C /var/lib/mysql/
 sudo mariadb-install-db --user=mysql --basedir=/usr --datadir=/var/lib/mysql
 
+# Prepare Postgres
+chattr +C /var/lib/postgres
+sudo initdb -D /var/lib/postgres/data
+
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+cargo install cargo-watch
+cargo install diesel_cli --no-default-features --features="mysql postgresql"
+
 # Enable services
 sudo systemctl enable --now mariadb.service
+sudo systemctl enable --now postgresql.service
 sudo systemctl enable lightdm
 
 # Install NVM & Composer
